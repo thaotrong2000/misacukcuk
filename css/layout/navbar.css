@@ -1,0 +1,103 @@
+﻿
+/*Tạo phần Menuubar chung */
+.menu-navbar {
+    width: 200px;
+    height: 100vh;
+    background-color: #ffffff;
+    border-right: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/*Tạo logo Cukcuk of Misa*/
+
+.logo-box {
+    width: 100%;
+    height: 60px;
+    background-color: #ffffff;
+    display: flex;
+    box-sizing: border-box;
+    padding: 0px 20px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+    .logo-box .sidebar {
+        width: 24px;
+        height: 24px;
+        background-image: url("../../content/img/toggle.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        border: none;
+        outline: none;
+        cursor: pointer; 
+    }
+
+    .logo-box .sidebar-logo {
+        width: 120px;
+        height: 30px;
+        background-image: url("../../content/img/cukcuk-logo.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-left: 5px;
+    }
+
+/*Tạo sidebar lựa chọn */
+
+.sidebar{
+}
+
+.sidebar-option{
+    box-sizing: border-box ;
+    width: 100%; 
+    height: 50px;
+    background-color: #ffffff;
+    display: flex; 
+    align-items: center; 
+    padding: 0px 20px;
+    cursor: pointer;    
+
+}
+
+.sidebar-option:hover{
+    background-color: #ccc;
+}
+
+
+    .sidebar-option .sidebar-icon {
+        width: 20px; 
+        height: 20px; 
+        background-repeat: no-repeat; 
+        background-size: contain; 
+        background-position: center;
+        margin-right: 8px;
+
+    }
+
+    .sidebar-option .sidebar-dashboard {
+        background-image: url("../../content/icon/dashboard.png");
+    }
+    .sidebar-option .sidebar-report {
+        background-image: url("../../content/icon/report.png");
+    }
+
+    .sidebar-option .sidebar-buyitems {
+        background-image: url("../../content/icon/dashboard.png");
+    }
+
+    .sidebar-option .sidebar-listcustomer {
+        background-image: url("../../content/icon/dic-employee.png");
+    }
+    .sidebar-option .sidebar-system {
+        background-image: url("../../content/icon/setting.png");
+    }
+
+
+
+/*Tạo ẩn sidebar */
+
+.addMenuBar{
+    display: none;
+}
+

@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <link href="../css/layout/navbar.css" rel="stylesheet" />
+    <link href="../css/layout/header.css" rel="stylesheet" />
+    <link href="../css/layout/content.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+    <div class="menu-navbar">
+        <div class="logo-box">
+            <button class="sidebar"></button>
+            <div class="sidebar-logo"></div>
+        </div>
+        <div class="side-bar">
+            <div class="sidebar-option">
+                <div class="sidebar-icon sidebar-dashboard"></div>
+                <div class="sidebar-text">Tổng quan</div>
+            </div>
+            <div class="sidebar-option">
+                <div class="sidebar-icon sidebar-report"></div>
+                <div class="sidebar-text">Báo cáo</div>
+            </div>
+            <div class="sidebar-option">
+                <div class="sidebar-icon sidebar-listcustomer"></div>
+                <div class="sidebar-text">Danh mục khách hàng</div>
+            </div>
+            <div class="sidebar-option">
+                <div class="sidebar-icon sidebar-listcustomer"></div>
+                <div class="sidebar-text">Danh mục khách hàng</div>
+            </div>
+            <div class="sidebar-option">
+                <div class="sidebar-icon sidebar-system"></div>
+                <div class="sidebar-text">Hệ thống</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Tạo Header -->
+    <div class="header">
+        <div class="header-name">
+            <div class="header-title">Nhà hàng Biển Đông</div>
+            <div class="header-icon"></div>
+        </div>
+        <div class="header-information">
+            <div class="header-imgperson"></div>
+            <div class="header-nameperson">Nguyễn Văn Mạnh</div>
+            <div class="header-iconsystem"></div>
+        </div>
+
+    </div>
+
+    <!-- Tạo Content -->
+    <div class="content">
+        <div class="content-title">
+            <div class="content-name">Danh sách khách hàng</div>
+            <button class="content-iconadd">
+                <div class="iconadd"></div>
+                <div class="iconname">Thêm khách hàng</div>
+            </button>
+        </div>
+        <div class="content-icon">
+            <div class="content-iconsearch">
+                <div class="iconsearch-icon"></div>
+                <div class="iconsearch-input">
+                    <input type="text" name="name" value="" placeholder="Tìm kiếm theo mã tên khác" />
+                </div>
+            </div>
+            <button class="content-refresh"></button>
+        </div>
+        <div class="content-table">
+            <table id="tblListCustomer">
+                <thead>
+                    <tr>
+                        <th>Mã khách hàng</th>
+                        <th>Họ và tên</th>
+                        <th>Giới tính</th>
+                        <th>Ngày sinh</th>
+                        <th>Nhóm khách hàng</th>
+                        <th>Điện thoại</th>
+                        <th>Email</th>
+                        <th>Số tiền nợ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="paging">CopyRight ThaoNguyen@</div>
+    </div>
+
+    <!-- Tạo footer -->
+    <div class="dialog dialog-hidden">
+        <div class="model"></div>
+        <div class="dialog-content">
+            <div class="dialog-body">
+                <div class="dialog-title">
+                    <div class="dialog-title-text">Thông tin khách hàng</div>
+                    <div class="dialog-title-buttonclose"></div>
+                </div>
+                <div class="dialog-infor-body">
+                    <div class="dialog-both-avatarinfor">
+                        <div class="dialog-infor-avatar">
+                            <div class="avatar">
+                                <div class="avatar-default"></div>
+                            </div>
+                            <div class="avatar-note">Vui lòng chọn ảnh có định dạng .jpg .jpeg .png .gif</div>
+                        </div>
+                        <div class="dialog-infor-one">
+                            <label class="input-infor-text" >Mã khách hàng(<span style="color:red;">*</span>)</label>
+                            <input class="input-infor" id="txtCustomerId" type="text" name="name" value="" />
+                            <label class="input-infor-text">Mã thẻ thành viên</label>
+                            <input class="input-infor" id="txtCard" type="text" name="name" value="" />
+                            <label class="input-infor-text">Ngày sinh</label>
+                            <input class="input-infor" id="txtDateOfBirth" type="date" name="name" value="" />
+                        </div>
+                    </div>
+                    <div class="dialog-infor-two">
+                        <label class="input-infor-text">Họ và tên(<span style="color:red;">*</span>)</label>
+                        <input class="input-infor" id="txtName" type="text" name="name" value="" />
+                        <label class="input-infor-text">Nhóm khách hàng</label>
+                        <input class="input-infor" id="txtGroupCustomer" type="text" name="name" value="" />
+                        <label class="input-infor-text">Giới tính</label>
+                        <form  method="post" id="txtGender">
+                            <input type="radio" name="gender" value="1" />Nam
+                            <input type="radio" name="gender" value="0" />Nữ
+                            <input type="radio" name="gender" value="2" />Khác
+                        </form>
+
+
+                    </div>
+                </div>
+                <div class="dialog-infor-footer">
+                    <div class="dialog-email-tel">
+                        <div class="dialog-email">
+                            <p class="labelEmail">Email</p>
+                            <input type="text" id="txtEmail" name="name" value="" placeholder="name@gmail.com" />
+                        </div>
+                        <div class="dialog-tel">
+                            <p class="labelTel">Số điện thoại(<span style="color:red;">*</span>)</p>
+                            <input type="text" id="txtTel" name="name" value="" />
+                        </div>
+                    </div>
+                    <div class="dialog-company-id">
+                        <div class="dialog-company">
+                            <p class="labelCompany">Tên công ty</p>
+                            <input type="text" id="txtCompany" name="name" value="" />
+                        </div>
+                        <div class="dialog-id">
+                            <p class="labelId">Mã số thuế</p>
+                            <input type="text" name="name" id="txtTaxId" value="" placeholder="Mã số thuế của công ty" />
+                        </div>
+                    </div>
+                    <div class="dialog-address">
+                        <div class="labelAddress">Địa chỉ</div>
+                        <input type="text" name="name" id="txtAddress" value="" />
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-footer">
+                <div class="dialog-footer-cancel">Hủy</div>
+                <div class="dialog-footer-save" id="save-button">
+                    <div class="icon-save"></div>
+                    <div class="text-save">Lưu</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/customer.js"></script>
+</body>
+</html>

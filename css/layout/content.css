@@ -1,0 +1,511 @@
+﻿/*Tạo khung content chung */
+@font-face {
+    font-family: 'GoogleSans-Medium';
+    src: url('../../content/font/GoogleSans-Medium.otf') format('opentype');
+}
+
+.content {
+    position: absolute;
+    top: 60px;
+    left: 200px;
+    right: 0px;
+    bottom: 0px;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+    /*Tạo content tiêu đề*/
+
+    .content .content-title {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: GoogleSans-Medium;
+    }
+
+.content-title .content-name {
+    font-size: 17px;
+}
+
+.content-title .content-iconadd {
+    width: 150px;
+    height: 30px;
+    display: flex;
+    padding: 0px;
+    border: 0px;
+    background-color: #2593d3;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.content-iconadd:focus {
+    outline: none;
+}
+
+.content-iconadd .iconadd {
+    background-image: url("../../content/icon/add.png");
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.content-iconadd .iconname {
+    line-height: 30px;
+    font-weight: 100;
+    color: #ffffff;
+    font-family: GoogleSans-Medium;
+}
+
+
+/*Tạo content navbar*/
+
+.content-icon {
+    width: 100%;
+    height: 60px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+    .content-icon .content-iconsearch {
+        width: 220px;
+        height: 30px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border: 1px solid #ccc;
+    }
+
+.content-iconsearch .iconsearch-icon {
+    width: 15px;
+    height: 15px;
+    background-image: url("../../content/icon/search.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-right: 5px;
+}
+
+.content-iconsearch .iconsearch-input {
+}
+
+.iconsearch-input input {
+    height: 28px;
+    box-sizing: border-box;
+    border: none;
+}
+
+    .iconsearch-input input:focus {
+        outline: none;
+    }
+
+
+
+.content-icon .content-refresh {
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    background-image: url("../../content/icon/refresh.png");
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+    background-position: center;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+    .content-icon .content-refresh:focus {
+        outline: none;
+    }
+
+
+/*Tạo bảng dữ liệu Content*/
+.content .content-table {
+    position: absolute;
+    top: 120px;
+    bottom: 35px;
+    overflow-y: auto;
+    right: 10px;
+    left: 10px;
+}
+
+.content-table table {
+    width: 100%;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #ccc;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 10px;
+}
+
+tr {
+    border-bottom: 1px solid #ccc;
+}
+
+
+/*Tạo paging*/
+.paging {
+    position: absolute;
+    bottom: 0;
+    height: 35px;
+    left: 0;
+    right: 0;
+    background-color: #ccc;
+    text-align: center;
+}
+
+/*Tạo model làm mờ khung chính*/
+
+.model {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #000000;
+    opacity: 40%;
+}
+
+.dialog-content {
+    position: absolute;
+    width: 600px;
+    height: 500px;
+    top: calc(50% - 250px);
+    left: calc(50% - 300px);
+    background-color: #ffffff;
+}
+
+    .dialog-content .dialog-body {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 70px;
+        box-sizing: border-box;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+.dialog-body .dialog-title {
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.dialog-title .dialog-title-text {
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.dialog-title .dialog-title-buttonclose {
+    height: 20px;
+    width: 20px;
+    background-image: url("../../content/icon/x.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.dialog-content .dialog-footer {
+    position: absolute;
+    height: 70px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.dialog-footer-save .text-save {
+    padding: 10px 24px;
+    background-color: #64bd6f;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    .dialog-footer-save .text-save:hover {
+        color: #ffffff;
+    }
+
+.dialog-footer .dialog-footer-cancel {
+    padding: 10px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    .dialog-footer .dialog-footer-cancel:hover {
+        background-color: #ff0000;
+        color: #ffffff;
+    }
+
+/**
+    Tạo chức năng ẩn hiện Dialog
+*/
+
+.dialog-hidden {
+    display: none;
+}
+
+
+
+
+
+/*Tạo chỗ nhập AVATAR và thông tin cần thiết thứ nhất*/
+.dialog-body .dialog-infor-body {
+    width: 100%;
+    height: calc(50% - 20px);
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+}
+
+/*Tạo phần avatar*/
+
+.dialog-infor-body .dialog-both-avatarinfor {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 66%;
+    display: flex;
+}
+
+.dialog-both-avatarinfor .dialog-infor-avatar {
+    height: 100%;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.dialog-infor-avatar .avatar {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.avatar .avatar-default {
+    width: 140px;
+    height: 140px;
+    background-image: url("../../content/img/default-avatar.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+}
+
+.dialog-infor-avatar .avatar-note {
+    width: 100%;
+    height: 20%;
+    text-align: center;
+}
+
+
+
+.dialog-both-avatarinfor .dialog-infor-one {
+    height: 100%;
+    width: 50%;
+    box-sizing: border-box;
+}
+/*Tạo thẻ thông tin đăng nhập thứ nhất*/
+.dialog-both-avatarinfor .dialog-infor-one {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dialog-infor-one input {
+    height: 30px;
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 3px;
+}
+/*Tạo thẻ thông tin đăng nhập thứ hai*/
+.dialog-infor-body .dialog-infor-two {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dialog-infor-two > input {
+    height: 30px;
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 3px;
+}
+
+.dialog-infor-two form {
+    height: 30px;
+}
+/*Tạo chỗ nhập thông tin cần thiết thứ hai*/
+.dialog-body .dialog-infor-footer {
+    width: 100%;
+    height: calc(50% - 20px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.dialog-infor-footer .dialog-email-tel {
+    flex-grow: 1;
+    display: flex;
+    position: relative;
+}
+
+.dialog-email-tel .dialog-email {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 66%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dialog-email .labelEmail, .dialog-tel .labelTel {
+    margin: 0px;
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+}
+
+.dialog-email input, .dialog-tel input {
+    flex-grow: 1;
+}
+
+.dialog-email-tel .dialog-tel {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 33%;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dialog-infor-footer .dialog-company-id {
+    flex-grow: 1;
+}
+
+.dialog-infor-footer .dialog-address {
+    flex-grow: 1;
+}
+
+/*Tạo nội dung phần Company và Mã số thuế*/
+
+.dialog-infor-footer .dialog-company-id {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+}
+
+.dialog-company-id .dialog-company {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 66%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dialog-company-id .dialog-id {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dialog-company p, .dialog-id p {
+    margin: 0px;
+}
+
+.dialog-company .labelCompany, .dialog-id .labelId {
+    display: flex;
+    flex-grow: 1;
+    align-items: flex-end;
+}
+
+.dialog-company input, .dialog-id input {
+    flex-grow: 1;
+}
+
+input {
+    outline: none;
+}
+
+
+/*Tạo mục nhập địa chỉ*/
+.dialog-address {
+    max-height: calc(100% / 3);
+    display: flex;
+    flex-direction: column;
+}
+
+    .dialog-address .labelAddress {
+        flex-grow: 1;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .dialog-address input {
+        flex-grow: 1;
+    }
+
+
+
+
+
+
+
+/**/
+.dialog-infor-footer .dialog-address {
+    flex-grow: 1;
+}
+
+
+
+
+/*Tạo nội dung để thay đổi Content*/
+.addContent {
+    left: 0px;
+}
