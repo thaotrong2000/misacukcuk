@@ -68,46 +68,40 @@ function setButtonEvent() {
      * Tạo chức năng thêm dữ liệu người dùng vào API JSON
      * 
      * **/
-    $(document).on('click', '#save-button', function () {
-
-        var customerId = $("#txtCustomerId").val();
-        var customerCardId = $("#txtCard").val();
-
-        var customerDateOfBirth = $("#txtDateOfBirth").val();
-        var customerName = $("#txtName").val();
-        var customerGroupCustomer = $("#txtGroupCustomer").val();
-        var customerGender = $("#txtGender").val();
-        var customerEmail = $("#txtEmail").val();
-
-        var customerTel = $("#txtTel").val();
-        var customerCompany = $("#txtCompany").val();
-        var customerTaxId = $("#txtTaxId").val();
-        var customerAddress = $("#txtAddress").val();
-
-
+    $(document).on("click", "#save-button", function () {
         var newData = {
-            "CustomerId": customerId,
-            "CustomerCode": customerCardId,
-            "FullName": customerName,
-            "Gender": customerGender,
-            "DateOfBirth": customerDateOfBirth,
-            "Email": customerEmail,
-            "PhoneNumber": customerTel,
-            "CustomerGroupId": customerGroupCustomer
-        }
-        // Gọi service để lưu lại:
+            "CustomerCode": "KH11177dddddd8886324324",
+            "FullName": "Nguyen Trong Thao hat",
+            "Gender": 1,
+            "Address": "America",
+            "DateOfBirth": "1998-12-31T00:00:00",
+            "Email": "no1qecc@gmail.com",
+            "PhoneNumber": "98799377ddd3334433",
+            "CustomerGroupId": "0cb5da7c-59cd-4953-b17e-c9adc9161663",
+            "DebitAmount": null,
+            "MemberCardCode": "3438839",
+            "CompanyName": "BrackGroup",
+            "CompanyTaxCode": "12343",
+            "IsStopFollow": false,
+            "CustomerGroupName": "Nhóm khách hàng MISA",
+            "GenderName": "Nam",
+            "MISAEntityState": 0
+        };
+
         $.ajax({
             method: "POST",
             url: "http://api.manhnv.net/api/customers",
+            contentType: "application/json",
             data: JSON.stringify(newData),
-            async: false,
-            contentType: "application/json"
-        }).done(function (response) {
-            alert('Thêm thành công!');
-        }).fail(function (response) {
-            alert('Không thêm được!');
-        })
-    });
+            async: false
+        }).done(function (data) {
+            alert("THEM DU LIEU THANH CONG");
+            debugger;
+        }).fail(function (data) {
+            alert("khong them duoc du lieu");
+            debugger;
+        });
+    })
 
 
 }
