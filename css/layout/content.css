@@ -509,3 +509,26 @@ input {
 .addContent {
     left: 0px;
 }
+
+
+
+/* Tạo nội dung DELETE */
+.delete-add-customer{
+    display: flex; 
+    flex-direction: row; 
+    align-items: center;
+}
+
+#delete-customer{
+    margin-right: 10px;
+    width: 24px; 
+    height: 24px; 
+    background-image: url("../../content/icon/close-icon.png");
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    outline: none;
+     
+}

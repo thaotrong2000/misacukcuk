@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <link href="../css/common.css" rel="stylesheet" />
@@ -8,6 +9,7 @@
     <link href="../css/layout/content.css" rel="stylesheet" />
     <title></title>
 </head>
+
 <body>
     <div class="menu-navbar">
         <div class="logo-box">
@@ -57,10 +59,13 @@
     <div class="content">
         <div class="content-title">
             <div class="content-name">Danh sách khách hàng</div>
-            <button class="content-iconadd">
-                <div class="iconadd"></div>
-                <div class="iconname">Thêm khách hàng</div>
-            </button>
+            <div class="delete-add-customer">
+                <button id="delete-customer"></button>
+                <button class="content-iconadd">
+                    <div class="iconadd"></div>
+                    <div class="iconname">Thêm khách hàng</div>
+                </button>
+            </div>
         </div>
         <div class="content-icon">
             <div class="content-iconsearch">
@@ -110,7 +115,7 @@
                             <div class="avatar-note">Vui lòng chọn ảnh có định dạng .jpg .jpeg .png .gif</div>
                         </div>
                         <div class="dialog-infor-one">
-                            <label class="input-infor-text" >Mã khách hàng(<span style="color:red;">*</span>)</label>
+                            <label class="input-infor-text">Mã khách hàng(<span style="color:red;">*</span>)</label>
                             <input class="input-infor" id="txtCustomerId" type="text" name="name" value="" />
                             <label class="input-infor-text">Mã thẻ thành viên</label>
                             <input class="input-infor" id="txtCard" type="text" name="name" value="" />
@@ -124,10 +129,10 @@
                         <label class="input-infor-text">Nhóm khách hàng</label>
                         <input class="input-infor" id="txtGroupCustomer" type="text" name="name" value="" />
                         <label class="input-infor-text">Giới tính</label>
-                        <form  method="post" id="txtGender">
-                            <input type="radio" name="gender" value="1" />Nam
-                            <input type="radio" name="gender" value="0" />Nữ
-                            <input type="radio" name="gender" value="2" />Khác
+                        <form method="post" id="txtGender">
+                            <input type="radio" name="gender" value="1" /><label for="">Nam</label>
+                            <input type="radio" name="gender" value="0" /><label for="">Nữ</label>
+                            <input type="radio" name="gender" value="2" /><label for="">Giới tính khác</label>
                         </form>
 
 
@@ -151,7 +156,8 @@
                         </div>
                         <div class="dialog-id">
                             <p class="labelId">Mã số thuế</p>
-                            <input type="text" name="name" id="txtTaxId" value="" placeholder="Mã số thuế của công ty" />
+                            <input type="text" name="name" id="txtTaxId" value=""
+                                placeholder="Mã số thuế của công ty" />
                         </div>
                     </div>
                     <div class="dialog-address">
@@ -173,4 +179,5 @@
     <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="../js/customer.js"></script>
 </body>
+
 </html>
