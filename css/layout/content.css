@@ -95,10 +95,11 @@
     background-size: contain;
     background-position: center;
     margin-right: 5px;
+    margin-left: 10px;
+    cursor: pointer;
 }
 
-.content-iconsearch .iconsearch-input {
-}
+
 
 .iconsearch-input input {
     height: 28px;

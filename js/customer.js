@@ -1,6 +1,7 @@
 ﻿$(document).ready(function () {
     loadData();
     setButtonEvent();
+
 });
 
 var formVariable = null;
@@ -12,11 +13,11 @@ var customerIdSelected = null;
  * 
  */
 function loadData() {
-    var data = getData(); 
-    buildDataTableHTML(data); 
+    var data = getData();
+    buildDataTableHTML(data);
 }
 
-function getData(){
+function getData() {
     var customers = null;
     $.ajax({
         method: "GET",
@@ -25,19 +26,19 @@ function getData(){
         data: null,
         async: false
     }).done(function (data) {
-        customers = data; 
+        customers = data;
 
     }).fail(function () {
         alert("Khong load duoc du lieu");
     });
     return customers;
-    
+
 }
 
-function buildDataTableHTML(customer){
+function buildDataTableHTML(customer) {
     $("tbody").html("");
     $.each(customer, function (index, value) {
-        
+
         trHTML = $(`<tr>
                         <td>${value.CustomerCode}</td>
                         <td>${value.FullName}</td>
@@ -162,14 +163,81 @@ function setButtonEvent() {
             alert("THEM DU LIEU THANH CONG");
             $(".dialog").addClass("dialog-hidden");
             loadData();
+            debugger;
         }).fail(function (data) {
-            alert("khong them duoc du lieu");
+            alert(data.responseText);
+            debugger;
         });
 
     })
 
     // Tạo chức năng hiển thị dữ liệu dữ liệu khi CLICK vào 1 hàng dữ liệu 
     $("#tblListCustomer").on("dblclick", "tbody tr", rowOnDblClick);
+
+
+    // Tạo chức năng xóa người dùng
+
+    // B1: Hover vào dữ liệu và chuyển màu sang #CCC
+    $("tbody tr").on("mouseover", function () {
+        $(this).css("background-color", "#ccc");
+    });
+
+    $("tbody tr").on("mouseout", function () {
+        $(this).css("background-color", "white");
+    });
+
+    // B2: Click mouse va chon phan tu DELETE
+
+    $("#delete-customer").on("click", function () {
+        var confirmDelete = confirm("Are you Delete");
+        if (confirmDelete) {
+            alert("Please, Let you select row need delete");
+            $("tbody tr").on("click", function () {
+                alert("Are you delete");
+                var customerIdDelete = $(this).data("recordId");
+                alert(customerIdDelete);
+                $.ajax({
+                    method: "DELETE",
+                    url: "http://api.manhnv.net/api/customers/" + customerIdDelete,
+
+                }).done(function (res) {
+                    alert("Ban da xoa du lieu thanh cong");
+                    loadData();
+                }).fail(function (res) {
+                    alert("Khong xoa duoc");
+                    alert(res.responseText);
+                });
+            });
+        }
+    });
+
+
+    // Search dữ liệu cần tìm
+
+    $(".iconsearch-icon").on("click", function () {
+        var customerPerson = null;
+        var customerIdSearch = $("#search-customerId").val();
+
+        // Gọi AJAX để hiển thị dữ liệu
+
+        $.ajax({
+            method: "GET",
+            url: "http://api.manhnv.net/api/customers/" + customerIdSearch,
+            contentType: "application/json",
+            data: null,
+            async: false
+        }).done(function (data) {
+            customerPerson = data;
+            alert("Them du lieu thanh cong"); 
+
+        }).fail(function () {
+            alert("Khong load duoc du lieu");
+        });
+        
+
+
+    });
+
 
 }
 
@@ -206,5 +274,7 @@ function rowOnDblClick() {
 
     $("#txtTaxId").val(customer.CompanyTaxCode);
     $("#txtAddress").val(customer.Address);
+
+
 
 }
